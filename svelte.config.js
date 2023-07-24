@@ -16,16 +16,30 @@
 // 	}
 // };
 
-import adapter from '@sveltejs/adapter-cloudflare';
+// import adapter from '@sveltejs/adapter-cloudflare';
 
-export default {
+// export default {
+// 	kit: {
+// 		adapter: adapter({
+// 			// See below for an explanation of these options
+// 			routes: {
+// 				include: ['/*'],
+// 				exclude: ['<all>']
+// 			}
+// 		})
+// 	}
+// };
+
+
+import adapter from '@sveltejs/adapter-vercel';
+
+/** @type {import('@sveltejs/kit').Config} */
+const config = {
 	kit: {
 		adapter: adapter({
-			// See below for an explanation of these options
-			routes: {
-				include: ['/*'],
-				exclude: ['<all>']
-			}
-		})
-	}
+			runtime: 'nodejs18.x',
+		}),
+	},
 };
+
+export default config;
